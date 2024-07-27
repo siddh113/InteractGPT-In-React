@@ -9,7 +9,7 @@ const Main = () => {
   return (
         <div className="main">
             <div className="nav">
-                <p>Gemini</p>
+                <p>InteractGPT</p>
         </div>
 
         <div className="main-container">
