@@ -20,10 +20,16 @@ const Sidebar = () => {
             {extended
             ? <div className="recent">
                 <p className='recent-title'> Recent </p>
-                <div className="recent-entry">
-                    <img src={assets.message_icon} alt="" />
-                    <p>What is React...</p>
-                </div>
+                {prevPrompt.map((item, index) =>{
+                    return (
+                        <div className="recent-entry">
+                            <img src={assets.message_icon} alt="" />
+                            <p>{item.slice(0,18)}...</p>
+                        </div>
+                    )
+                }
+                )}
+                
             </div>
             : null
         }
