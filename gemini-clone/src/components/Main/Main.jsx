@@ -38,7 +38,7 @@ const Main = () => {
             </div>
 
             <div className="card">
-                <p>Improve the readability of sollowing code.</p>
+                <p>Improve the readability of Following code.</p>
                 <img src={assets.code_icon} alt="" />
             </div>
         </div>
@@ -73,7 +73,7 @@ const Main = () => {
                 </div>
 
                 <p className="bottom-info">
-                    Gemini may display inaacurate info, including people, Please double-check.
+                    Interact GPT may display inaacurate info, including people, Please double-check.
                 </p>
             </div>
         </div>        
