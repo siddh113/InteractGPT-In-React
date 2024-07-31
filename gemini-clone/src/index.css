@@ -21,3 +21,21 @@
     opacity: 1;
   }
 }
+
+:root[data-theme='light'] {
+  --background-color: #f0f4f9;
+  --text-color: #000;
+  --sidebar-bg: #ffffff;
+  --sidebar-text: #000;
+  --new-chat-bg: #e6eaf1;
+  --new-chat-text: gray;
+}
+
+:root[data-theme='dark'] {
+  --background-color: #333;
+  --text-color: #fff;
+  --sidebar-bg: #444;
+  --sidebar-text: #fff;
+  --new-chat-bg: #555;
+  --new-chat-text: #ccc;
+}

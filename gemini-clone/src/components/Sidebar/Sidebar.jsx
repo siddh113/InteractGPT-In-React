@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react'
 import './Sidebar.css'
 import {assets} from '../../assets/assets'
 import { Context } from '../../Context/Context'
+import { ThemeContext } from '../../Context/themeContext'
 
 const Sidebar = () => {
 
     const [extended, setExtended] = useState(false)
     const {onSent, prevPrompt, setRecentPrompt, newChat} = useContext(Context)
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
     const loadPrompt = async (prompt) => {
         setRecentPrompt(prompt)
@@ -49,7 +51,15 @@ const Sidebar = () => {
 
             <div className="bottom-item recent-entry">
                 <img src={assets.setting_icon} alt="" />
-                {extended? <p>Settings</p> : null}
+                {extended? <div className="settings">
+                            <p>Light/Dark Theme</p>
+                            <label className="switch">
+                                <input type="checkbox" checked={theme === 'dark'} onChange={toggleTheme} />
+                                <span className="slider round"></span>
+                            </label>
+                        </div>
+                
+                : null}
             </div>
         </div>
     </div>

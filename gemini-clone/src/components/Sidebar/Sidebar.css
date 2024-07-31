@@ -1,73 +1,145 @@
-.sidebar{
+:root[data-theme='light'] {
+    --background-color: #f0f4f9;
+    --text-color: #000;
+    --sidebar-bg: #ffffff;
+    --new-chat-bg: #e6eaf1;
+    --recent-entry-bg: #f9f9f9;
+    --recent-entry-hover-bg: #e2e6eb;
+}
+
+:root[data-theme='dark'] {
+    --background-color: #333;
+    --text-color: #fff;
+    --sidebar-bg: #444;
+    --new-chat-bg: #555;
+    --recent-entry-bg: #666;
+    --recent-entry-hover-bg: #555;
+}
+
+.sidebar {
     min-height: 100vh;
     display: inline-flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: #f0f4f9;
+    background-color: var(--sidebar-bg);
     padding: 25px 15px;
+    color: var(--text-color);
 }
 
-.sidebar img{
+.sidebar img {
     width: 20px;
 }
 
-.sidebar .menu{
+.sidebar .menu {
     display: block;
     margin-left: 10px;
     cursor: pointer;
 }
 
-.sidebar .new-chat{
+.sidebar .new-chat {
     margin-top: 50px;
     display: inline-flex;
     align-items: center;
     gap: 10px;
     padding: 10px 15px;
-    background-color: #e6eaf1;
+    background-color: var(--new-chat-bg);
     border-radius: 50px;
     font-size: 14px;
-    color: gray;
+    color: var(--text-color);
     cursor: pointer;
 }
 
-.sidebar .recent{
+.sidebar .recent {
     display: flex;
     flex-direction: column;
     animation: fadeIn 1.5s;
 }
 
-.sidebar .recent-title{
+.sidebar .recent-title {
     margin-top: 30px;
     margin-bottom: 20px;
 }
 
-.sidebar .recent-entry{
+.sidebar .recent-entry {
     display: flex;
     align-items: start;
     gap: 10px;
     padding: 10px;
     padding-right: 40px;
     border-radius: 50px;
-    color: #282828;
+    color: var(--text-color);
     cursor: pointer;
+    background-color: var(--recent-entry-bg);
 }
 
-.sidebar .recent-entry:hover{
-    background-color: #e2e6eb;
+.sidebar .recent-entry:hover {
+    background-color: var(--recent-entry-hover-bg);
 }
 
-.sidebar .bottom{
+.sidebar .bottom {
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
-.sidebar .bottom-item{
+.sidebar .bottom-item {
     padding-right: 10px;
     cursor: pointer;
 }
 
-@media (max-width: 600px){
-    .sidebar{
+.settings {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+@media (max-width: 600px) {
+    .sidebar {
         display: none;
     }
 }
